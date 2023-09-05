@@ -1,0 +1,373 @@
+
+
+
+body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background:#baf1d8;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#header{
+  background:#373737;
+  width:100%;
+  height:55px;
+  z-index:100;
+
+}
+
+#mobileNavBar{
+  display:none;
+  float:left;
+  width: 360px; 
+  height:230px;
+  position: absolute;
+  margin-top:5px;
+  z-index:99;
+}
+
+#navbar{
+  width:25px;
+  height:25px;
+  text-align:center;
+  line-height:25px;
+
+
+  margin:10px;
+  margin-bottom:0;
+  padding:5px;
+  background:#E8E9EB;
+  border-radius:10px;
+  border:#000000 solid 2px;
+
+}
+
+#navbar:hover{
+  background:#02c4b1;
+  width:29px;
+  height:29px;
+  line-height:29px;
+  color:#ffffff;
+  border:none;
+}
+
+h1{
+  display:block;
+  background:#373737;
+  color:#E8E9EB;
+  font-family:Calibri,"Times New Roma", sans-serif;
+  text-align:center;
+  padding:10px;
+  margin:0;
+  border-bottom:#ffffff solid 2px;
+
+}
+
+#navList{
+  display:none;
+  position:absolute;
+  width:360px;
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+#navList a{
+  display:block;
+  width:350px;
+  text-decoration:none;
+  color:#ffffff;
+  font-family:Calibri,"Times New Roma", sans-serif;
+  font-size:25px;
+  border-bottom: 2px white solid;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:10px;
+}
+
+
+
+
+
+#navList .active{
+  display:block;
+  background:#05f5dd;
+  font-weight: bold;
+  opacity:1;
+}
+
+#navList a:hover{
+  background:#05f5dd;
+}
+
+#navBarBackground{
+  display:none
+}
+
+
+main{
+  min-height:70vh;
+  margin-bottom:75px;
+  
+}
+main:after{
+  content:"";
+  display:block; 
+  height:25px;
+}
+
+#bodyText{
+  margin:auto;
+  margin-top:60px;
+  position:relative;
+  width:100%;
+  background:url("../image/background.png") no-repeat;
+  background-position: 50% 100%;
+  background-attachment: fixed;
+  background-size:100% auto;
+
+  background-color:rgba(255,255,255,.8);
+
+  
+}
+
+.comments, #comment, .reply, .subcomments, #reply{
+  scroll-margin-top: 110px;
+}
+
+.comments img{
+  display:block;
+  max-width:80%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+#supportimage, .reply img{
+  width:40px;
+  padding:2px;
+  border: 1px solid grey;
+  transform: translate(0, 10px);
+}
+
+#support{
+  margin-top:-20px;
+}
+
+.reply, .rockytalktext, .replytext{
+  white-space: pre-wrap;
+}
+
+
+.rockytalk img, #president{
+  display:block;
+  max-width:70%;
+  max-height:500px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+p{
+    text-overflow:ellipsis;
+    word-wrap: break-word;
+}
+
+
+
+figure {
+    display: inline-block;
+    text-align:center;
+    max-width:80%;
+}
+figure img, video{
+    vertical-align: top;
+    max-width:100%;
+}
+figure figcaption {
+    text-align: center;
+}
+
+#bodyText  div{
+  margin-left:2%;
+  margin-right:2%;
+
+}
+
+#bodyText > div{
+  padding-top:10px;
+
+}
+
+#quit{
+  border: black 1px solid;
+  padding-left:20px;
+  padding-right:10px;
+}
+
+#show{
+  border:black 1px solid;
+  height:400px;
+  overflow:scroll;
+  width:90%;
+}
+#show p{
+  padding-left:20px;
+  padding-right:10px;
+}
+
+.bg{
+  background: rgba(255,255,255,.8);
+  padding:10px;
+}
+
+#menu{
+  display:inline-block;
+  border: 1px black solid;
+  padding:30px;
+}
+
+#comment, .reply,.rkt{
+  padding-left:20px;
+  padding-right:10px;
+}
+
+
+
+footer{
+  color:#E8E9EB;;
+  background:#373737;
+  height: 150px;
+  text-align:center;
+
+  clear: both;
+  position: relative;
+  margin-top: -100px;
+}
+
+footer p{
+  width:80%;
+  margin:auto;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+footer img{
+  width:50px;
+  background:white;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+
+@media screen and (min-width:1000px){
+
+#mobileNavBar, #navbar, #navbar:hover,#navLis,#navList a, #navList .active, #navList a:hover{
+  all:unset;
+}
+
+#navbar{
+  display: none;
+}
+#navList, #navList a, #navList .active,#navList a:hover{
+  all:unset;
+}
+
+
+#navList li {
+  display:inline-block;
+  float:left;
+  color:#E8E9EB;
+  background:#373737;
+  padding-left:10px;
+  padding-right:10px;
+  font-family:Calibri,"Times New Roma", sans-serif;
+  text-align: center;
+  line-height:55px;
+  font-size:100%;
+  border-left:1px solid white;
+  border-right:1px solid white;
+}
+
+#navList a{
+  opacity:.7;
+}
+#navList .active{
+  opacity:1;
+}
+
+#navBarBackground{
+  display:block;
+  height:55px;
+  background:#373737;
+}
+
+#bodyText{
+  width:80%;
+}
+
+.figureimg{
+    max-width:30%;
+    margin:0;
+    margin-left:2.5%;
+}
+
+#aboutcontact div{
+  display:inline-block;
+  width:40%;
+  vertical-align:top;
+
+}
+
+#quitresponse{
+  display:inline-block;
+  width:30%;
+  vertical-align: top;
+}
+#showarea{
+  display:inline-block;
+  width:60%;
+  height:600px;
+  vertical-align: top;
+}
+
+#bodyText{
+  background-size:70% auto;
+}
+
+.comments img:not(.xl){
+  max-width:400px;
+}
+
+.xl{
+  width:800px;
+}
+
+.rockytalk img{
+  float:right;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
