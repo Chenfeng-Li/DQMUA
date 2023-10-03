@@ -47,7 +47,8 @@ if ( isset($_POST['name']) && isset($_POST['pass']) ) {
 		<meta charset='UTF-8'>
 		<meta name = ‘viewport’ content=‘width=device-width, initial-scale=1’>
 		<title>管理员登录</title>
-		<link rel='icon' type='image/png' href='image/icon/DQMUA.png'>
+		<link rel='icon' type='image/jpg' href='image/icon/DQMUA.jpeg'>
+		<link rel="shortcut icon" type='image/jpg' href='image/icon/DQMUA.jpeg'>
 
 		<script src="https://kit.fontawesome.com/4dd2f70620.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href='css/style.css'>
@@ -56,6 +57,7 @@ if ( isset($_POST['name']) && isset($_POST['pass']) ) {
 
 	</head>
 <body>
+    <?php echo hash('md5', $salt.'123') ?>
 
 <div class="container">
 <h2>管理员登录</h2>

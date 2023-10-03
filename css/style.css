@@ -173,11 +173,6 @@ main:after{
   margin-right:auto;
 }
 
-p{
-    text-overflow:ellipsis;
-    word-wrap: break-word;
-}
-
 
 
 figure {
@@ -265,7 +260,7 @@ footer img{
 }
 
 
-@media screen and (min-width:1000px){
+@media screen and (min-width:800px){
 
 #mobileNavBar, #navbar, #navbar:hover,#navLis,#navList a, #navList .active, #navList a:hover{
   all:unset;
