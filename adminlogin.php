@@ -57,7 +57,6 @@ if ( isset($_POST['name']) && isset($_POST['pass']) ) {
 
 	</head>
 <body>
-    <?php echo hash('md5', $salt.'123') ?>
 
 <div class="container">
 <h2>管理员登录</h2>

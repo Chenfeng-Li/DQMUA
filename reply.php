@@ -115,9 +115,10 @@ if(isset($_POST['deleteId'])){
 <html lang='en'>
     <head>
         <meta charset='UTF-8'>
-        <meta name = 'viewport' content='width=device-width, initial-scale=1'>
+        <meta name = ‘viewport’ content=‘width=device-width, initial-scale=1’>
         <title>留言回复</title>
-		<link rel='icon' type='image/png' href='image/icon/DQMUA.png'>
+        <link rel='icon' type='image/jpg' href='image/icon/DQMUA.jpeg'>
+        <link rel="shortcut icon" type='image/jpg' href='image/icon/DQMUA.jpeg'>
 
         <script src="https://kit.fontawesome.com/4dd2f70620.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href='css/style.css'>
@@ -212,7 +213,7 @@ if(isset($_POST['deleteId'])){
             }
             ?>
             <form method="post">
-                <p>姓名/化名: <input type="text" id='name' name="name" size="30" value="<?php echo($_SESSION['name']??'')?>" onchange='entername()'><br>
+                <p>姓名/化名: <input type="text" id='name' name="name" size="30" value="<?php echo($_SESSION['name']??'')?>" onchange='entername()'>   
                  <input type='checkbox' id='isan'  onchange='isano()'>使用匿名</p>
                 <p id="support">
                     立场: <img src="image/icon/taffyDQMUA.png" alt=‘DQMUA’ id='supportimage'>
@@ -222,7 +223,7 @@ if(isset($_POST['deleteId'])){
                 </p>
                 <p>
                     留言：字数： <span id='count'>0</span> / 1000<br>
-                    <textarea id="text" name="commenttext" rows="5" cols="40" onchange='wordcount("count",this)'><?php echo($_SESSION['commenttext']??'') ?></textarea><br>
+                    <textarea id="text" name="commenttext" rows="5" cols="50" onchange='wordcount("count",this)'><?php echo($_SESSION['commenttext']??'') ?></textarea><br>
                 </p>
                 <input type="submit" value="留言发布"> 
             </form>
@@ -262,7 +263,7 @@ if(isset($_POST['deleteId'])){
 
                     echo "<form method='post' style='display:none' id='revise".$row['comment_id']."'>";
                     echo "修改：字数： <span id='".$row['comment_id']."'>".mb_strlen($row['comment'],'utf8')."</span> / 1000<br>";
-                    echo "<textarea name='revisetext' rows='5' cols='40' onchange='wordcount(".$row['comment_id'].",this)'>".htmlentities($row['comment'])."</textarea><br>";
+                    echo "<textarea name='revisetext' rows='5' cols='50' onchange='wordcount(".$row['comment_id'].",this)'>".htmlentities($row['comment'])."</textarea><br>";
                     echo "<input type='hidden' name='reviseId' value=".$row['comment_id'].">";
                     echo "<input type='submit' value='确认修改'>";
                     echo "</form>";

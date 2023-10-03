@@ -37,9 +37,10 @@ if(isset($_POST['name'])){
 <html lang='en'>
     <head>
         <meta charset='UTF-8'>
-        <meta name = 'viewport' content='width=device-width, initial-scale=1'>
+        <meta name = ‘viewport’ content=‘width=device-width, initial-scale=1’>
         <title>rockytuan谈解散MUA</title>
-		<link rel='icon' type='image/png' href='image/icon/DQMUA.png'>
+        <link rel='icon' type='image/jpg' href='image/icon/DQMUA.jpeg'>
+        <link rel="shortcut icon" type='image/jpg' href='image/icon/DQMUA.jpeg'>
 
         <script src="https://kit.fontawesome.com/4dd2f70620.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href='css/style.css'>
@@ -86,7 +87,7 @@ if(isset($_POST['name'])){
                     echo "<p>作者： <input type='text' id='name' name='name' size='30' value='rockytuan'></p>";
                     echo "<p>发布场合： <input type='text' id='app' name='app' size='30' value='树洞#'></p>";
                     echo "<p>发布时间： <input type='text' id='postdate' name='postdate' size='30'></p>";
-                    echo "<p>内容：<textarea id='text' name='text' rows='5' cols='40'></textarea></p>";
+                    echo "<p>内容：<textarea id='text' name='text' rows='5' cols='50'></textarea></p>";
                     echo "<p>图片：<input type='file' name='image'></p>";
                     echo "<input type='submit' value='Submit'>";
                     echo "</form></div>";
@@ -97,7 +98,6 @@ if(isset($_POST['name'])){
                 <div>
                 <h2>rockytuan历来在树洞的发言（正在补充中）</h2>
                 <p>完整内容欢迎查看Telegram频道<a href="https://t.me/TheManWhoDisqualifyingMUA" target='_blank'>rockytuan谈解散MUA</a></p>
-                <hr>
                 </div>
 
                 <?php
