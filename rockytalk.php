@@ -37,10 +37,9 @@ if(isset($_POST['name'])){
 <html lang='en'>
     <head>
         <meta charset='UTF-8'>
-        <meta name = ‘viewport’ content=‘width=device-width, initial-scale=1’>
+        <meta name = 'viewport' content='width=device-width, initial-scale=1'>
         <title>rockytuan谈解散MUA</title>
-        <link rel='icon' type='image/jpg' href='image/icon/DQMUA.jpeg'>
-        <link rel="shortcut icon" type='image/jpg' href='image/icon/DQMUA.jpeg'>
+		<link rel='icon' type='image/png' href='image/icon/DQMUA.png'>
 
         <script src="https://kit.fontawesome.com/4dd2f70620.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href='css/style.css'>
@@ -87,7 +86,7 @@ if(isset($_POST['name'])){
                     echo "<p>作者： <input type='text' id='name' name='name' size='30' value='rockytuan'></p>";
                     echo "<p>发布场合： <input type='text' id='app' name='app' size='30' value='树洞#'></p>";
                     echo "<p>发布时间： <input type='text' id='postdate' name='postdate' size='30'></p>";
-                    echo "<p>内容：<textarea id='text' name='text' rows='5' cols='50'></textarea></p>";
+                    echo "<p>内容：<textarea id='text' name='text' rows='5' cols='40'></textarea></p>";
                     echo "<p>图片：<input type='file' name='image'></p>";
                     echo "<input type='submit' value='Submit'>";
                     echo "</form></div>";
@@ -98,11 +97,24 @@ if(isset($_POST['name'])){
                 <div>
                 <h2>rockytuan历来在树洞的发言（正在补充中）</h2>
                 <p>完整内容欢迎查看Telegram频道<a href="https://t.me/TheManWhoDisqualifyingMUA" target='_blank'>rockytuan谈解散MUA</a></p>
+                <?php 
+                $order = $_GET['order']??"reverse";
+                if($order=="reverse"){
+                    echo '<p><a href="rockytalk.php?order=forward">以时间正序排列</a></p>';
+                }else{
+                    echo '<p><a href="rockytalk.php?order=reverse">以时间倒序排列</a></p>';
+                }
+                ?>
+                <hr>
                 </div>
 
                 <?php
                 $num=$_GET['next']??1;
-                $stmt=$pdo->query('SELECT * FROM rockytalk ORDER BY talk_id DESC LIMIT '.(10*$num));
+                if($order=="reverse"){
+                    $stmt=$pdo->query('SELECT * FROM rockytalk ORDER BY talk_id DESC LIMIT '.(10*$num));
+                }else{
+                    $stmt=$pdo->query('SELECT * FROM rockytalk ORDER BY talk_id LIMIT '.(10*$num));
+                }
 
 
                 while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -121,7 +133,7 @@ if(isset($_POST['name'])){
                 }
 
                 if($last['talk_id']!=1){
-                echo "<p><a href='rockytalk.php?next=".($num+1)."#rockytalkreply".$last['talk_id']."'>更多发言</a></p>";
+                echo "<p><a href='rockytalk.php?next=".($num+1)."&order=".$order."#rockytalkreply".$last['talk_id']."'>更多发言</a></p>";
             }
 
 

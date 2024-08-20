@@ -4,7 +4,7 @@ require_once('pdo.php');
 
 if(isset($_POST['name'])&&isset($_POST['sid'])){
     if(strlen($_POST['name'])<1||strlen($_POST['sid'])<1){
-        $_SESSION['commentfailure']="请填写名称与留言";
+        $_SESSION['commentfailure']="请填写姓名和SID";
         header('Location: signature.php#comment');
         return;
     }
@@ -48,10 +48,9 @@ if(isset($_POST['name'])&&isset($_POST['sid'])){
 <html lang='en'>
     <head>
         <meta charset='UTF-8'>
-        <meta name = ‘viewport’ content=‘width=device-width, initial-scale=1’>
-        <title>rockytuan谈解散MUA</title>
-        <link rel='icon' type='image/jpg' href='image/icon/DQMUA.jpeg'>
-        <link rel="shortcut icon" type='image/jpg' href='image/icon/DQMUA.jpeg'>
+        <meta name = 'viewport' content='width=device-width, initial-scale=1'>
+        <title>参与联署</title>
+		<link rel='icon' type='image/png' href='image/icon/DQMUA.png'>
 
         <script src="https://kit.fontawesome.com/4dd2f70620.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href='css/style.css'>

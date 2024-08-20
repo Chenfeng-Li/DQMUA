@@ -2,6 +2,10 @@
 session_start();
 require_once('pdo.php');
 
+if($_SERVER['REMOTE_ADDR']=='154.6.80.4'){
+    die();
+}
+
 if(isset($_POST['alias'])&&isset($_POST['response'])){
     $_SESSION['alias']=$_POST['alias'];
     $_SESSION['response']=$_POST['response'];
@@ -153,10 +157,9 @@ if(isset($_POST['deleteId'])){
 <html lang='en'>
     <head>
         <meta charset='UTF-8'>
-        <meta name = ‘viewport’ content=‘width=device-width, initial-scale=1’>
+        <meta name = 'viewport' content='width=device-width, initial-scale=1'>
         <title>DQMUA</title>
-        <link rel='icon' type='image/jpg' href='image/icon/DQMUA.jpeg'>
-        <link rel="shortcut icon" type='image/jpg' href='image/icon/DQMUA.jpeg'>
+		<link rel='icon' type='image/png' href='image/icon/DQMUA.png'>
 
         <script src="https://kit.fontawesome.com/4dd2f70620.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href='css/style.css'>
@@ -204,6 +207,7 @@ if(isset($_POST['deleteId'])){
         		    </div>
 
         		    <div id='contact' class='bg'>
+        		        <h2>公告： DQMUA.com 的寄存服务大约2024年8月17日后过期，在这之后将转为静态网站。 如需留言请尽快。</h2>
         		    	<h2>网站内容及联络方式</h2>
         		    	<ul>
         		    		<li><b>欢迎阅读DQMUA的纲领 <a href='ninecomments.php'>《对MUA的九条评论》</a></b></li>
@@ -244,6 +248,21 @@ if(isset($_POST['deleteId'])){
         				<figcaption dir='auto'>2023年1月为遭爆破的树洞吊唁《谨以此纪念被微信封号禁言的树洞》<br>
         					（然而在一周后MUA的伪树洞上线，我意识到树洞是<a href='ninecomments.php#c82'>遭到MUA恶意举报被封</a>，于是DQMUA与树洞达成统一战线）
         				</figcaption>
+        			</figure>
+        			
+        			<figure contenteditable='false' class='figureimg'>
+        				<img src='image/treehole1.jpeg'>
+        				<figcaption dir='auto'>树洞与DQMUA合作揭露MUA恶行</figcaption>
+        			</figure>
+
+        			<figure contenteditable='false' class='figureimg'>
+        				<img src='image/treehole2.jpeg'>
+        				<figcaption dir='auto'>树洞与DQMUA合作揭露MUA恶行2</figcaption>
+        			</figure>
+
+        			<figure contenteditable='false' class='figureimg'>
+        				<img src='image/treehole3.jpeg'>
+        				<figcaption dir='auto'>树洞与DQMUA合作揭露MUA恶行3</figcaption>
         			</figure>
 
         					
@@ -287,7 +306,7 @@ if(isset($_POST['deleteId'])){
 
 
                     <div id='showarea'>
-                    	<h3>战友们的留言</h3>
+                    	<h3>战友留言</h3>
                     	<div id='show' class='bg'>
 
                     	<?php
@@ -333,7 +352,7 @@ if(isset($_POST['deleteId'])){
             ?>
 
             <form method="post">
-                <p>姓名/化名: <input type="text" id='name' name="name" size="30" value="<?php echo($_SESSION['name']??'')?>" onchange='entername()'>   
+                <p>姓名/化名: <input type="text" id='name' name="name" size="30" value="<?php echo($_SESSION['name']??'')?>" onchange='entername()'>   <br>
                  <input type='checkbox' id='isan'  onchange='isano()'>使用匿名</p>
                 <p id="support">
                     立场: <img src="image/icon/taffyDQMUA.png" alt=‘DQMUA’ id='supportimage'>
@@ -343,7 +362,7 @@ if(isset($_POST['deleteId'])){
                 </p>
                 <p>
                     留言：字数： <span id='count'>0</span> / 1000<br>
-                    <textarea id="text" name="commenttext" rows="5" cols="50" onchange='wordcount("count",this)'><?php echo($_SESSION['commenttext']??'') ?></textarea><br>
+                    <textarea id="text" name="commenttext" rows="5" cols="40" onchange='wordcount("count",this)'><?php echo($_SESSION['commenttext']??'') ?></textarea><br>
                 </p>
                 <input type="submit" value="留言发布"> 
             </form>
@@ -386,7 +405,7 @@ if(isset($_POST['deleteId'])){
 
                     echo "<form method='post' style='display:none' id='revise".$row['comment_id']."'>";
                     echo "修改：字数： <span id='".$row['comment_id']."'>".mb_strlen(htmlentities($row['comment']),'utf8')."</span> / 1000<br>";
-                    echo "<textarea name='revisetext' rows='5' cols='50' onchange='wordcount(".$row['comment_id'].",this)'>".htmlentities($row['comment'])."</textarea><br>";
+                    echo "<textarea name='revisetext' rows='5' cols='40' onchange='wordcount(".$row['comment_id'].",this)'>".htmlentities($row['comment'])."</textarea><br>";
                     echo "<input type='hidden' name='reviseId' value=".$row['comment_id'].">";
                     echo "<input type='submit' value='确认修改'>";
                     echo "</form>";
